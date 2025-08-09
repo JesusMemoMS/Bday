@@ -11,6 +11,7 @@ public class interaccionHandler : MonoBehaviour
     public GameObject CartelGuardado;
     public Text textoInteract;
     public GameObject jugador;
+    public AudioSource cancionCuarto;
     [NonSerialized] public Dialogo dialogo;
     [NonSerialized] public string cuartoNom;
     [NonSerialized] public Vector3 telePos;
@@ -39,6 +40,10 @@ public class interaccionHandler : MonoBehaviour
         PlayerPrefs.Save();
         jugador.GetComponent<pMovimiento>().ultimoCuarto = cuartoNom;
         jugador.transform.position = telePos;
+        if (cancionCuarto != null)
+        {
+            cancionCuarto.Play();
+        }
         jugador.GetComponent<Animator>().Play(posFinal);
         CartelGuardado.GetComponent<Animator>().Play("defadeCartel");
     }
