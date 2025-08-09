@@ -1,2 +1,3 @@
 # Bday
-chino: i hate computers
+MEMO: Chino PUTO retrasado alv 
+ᗜ ̫ ᗜ
