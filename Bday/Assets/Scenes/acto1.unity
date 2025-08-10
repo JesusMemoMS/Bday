@@ -2700,7 +2700,7 @@ Transform:
   m_GameObject: {fileID: 704107907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.85, y: 10.18, z: 0}
+  m_LocalPosition: {x: -0.04, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6965,6 +6965,7 @@ GameObject:
   - component: {fileID: 1844545511}
   - component: {fileID: 1844545513}
   - component: {fileID: 1844545514}
+  - component: {fileID: 1844545515}
   m_Layer: 0
   m_Name: puerta-I
   m_TagString: Untagged
@@ -7065,6 +7066,102 @@ MonoBehaviour:
   prog1:
     m_PersistentCalls:
       m_Calls: []
+--- !u!82 &1844545515
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844545509}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0e8b18f163e31174da5c732f848871b9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1878294199
 GameObject:
   m_ObjectHideFlags: 0
@@ -7481,23 +7578,25 @@ MonoBehaviour:
     - " \xBFQue esperabas? "
     - "\xBFQue te dijera \u201Chola chicos, estoy por ac\xE1\u201D?"
     - "No importa, tardamos tanto en llegar hasta ac\xE1 solo para que escapara\u2026 "
-    - "\xBFC\xF3mo lo supo? \xBFLo sinti\xF3?"
-    - "Algo as\xED"
+    - "\xBFC\xF3mo lo supo?"
+    - "\xBFLo sinti\xF3?"
+    - "Algo as\xED."
     - "Debido a que hemos hecho esto por tanto tiempo, cargamos mucha \"energ\xEDa
       negativa\""
     - "Que es relativamente f\xE1cil de percibir"
     - "\xBFPor que crees que no hay gente cuando pasamos por la calle?"
-    - "Cre\xED que era discreto"
+    - "Cre\xED que era discreto."
     - ...
     - "\xA1Oh! Hola X, \xBFdonde estabas?"
     - ...
     - Si, al parecer tendremos que encontrar a otro sujeto para Slenderman
     - "Con lo que nos cost\xF3 encontrar a este..."
     - 'Ni siquiera puedes quejarte, Toby. '
-    - "Si no fuera porque espantaste al pueblo no tendr\xEDamos que venir hasta ac\xE1
-      a buscar personas"
-    - Tu mamita w
-    - "Tranquilo Toby, salt\xF3 por la ventana as\xED que dudo que est\xE9 muy lejos\r\n"
+    - "Si no fuera porque espantaste al pueblo no tendr\xEDamos que buscar gente
+      aqui."
+    - Tu mama.
+    - Tranquilo Toby
+    - "salt\xF3 por la ventana as\xED que dudo que est\xE9 muy lejos\r"
     - "Todav\xEDa podemos salir a buscar-"
     nombres:
     - Toby
@@ -7506,6 +7605,7 @@ MonoBehaviour:
     - Masky
     - Toby
     - Toby
+    - Toby
     - Hoodie
     - Hoodie
     - Hoodie
@@ -7519,6 +7619,7 @@ MonoBehaviour:
     - Masky
     - Masky
     - Toby
+    - Hoodie
     - Hoodie
     - Hoodie
     arriba: 0
@@ -7528,6 +7629,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7ff546af86c6e7f4fae8035eb30bc641, type: 3}
   - {fileID: 21300000, guid: 7ff546af86c6e7f4fae8035eb30bc641, type: 3}
   - {fileID: 21300000, guid: 6fe8845a16397544f875d6a724bb73ad, type: 3}
+  - {fileID: 21300000, guid: c9875bca19372294998df3ae4e1eff4e, type: 3}
   - {fileID: 21300000, guid: c9875bca19372294998df3ae4e1eff4e, type: 3}
   - {fileID: 21300000, guid: cee0df9351a35ab419c1c5b6c56934e7, type: 3}
   - {fileID: 21300000, guid: 8f939d19d13785c4594cd634626c9310, type: 3}
@@ -7542,6 +7644,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7ff546af86c6e7f4fae8035eb30bc641, type: 3}
   - {fileID: 21300000, guid: b798fe581974d5b498255937c8f44d51, type: 3}
   - {fileID: 21300000, guid: 1e9ede91dfb111f4d9c442179628b2a6, type: 3}
+  - {fileID: 21300000, guid: 8f939d19d13785c4594cd634626c9310, type: 3}
   - {fileID: 21300000, guid: 8f939d19d13785c4594cd634626c9310, type: 3}
   - {fileID: 21300000, guid: cee0df9351a35ab419c1c5b6c56934e7, type: 3}
   cuartoCentro: {fileID: 799603521}
