@@ -27,7 +27,6 @@ public class seguimientoScript : MonoBehaviour
         {
             if (pos == Vector3.zero)
             {
-                Debug.Log("ay");
                 moverse = false;
                 anims.SetBool("idle", true);
             }
@@ -35,6 +34,11 @@ public class seguimientoScript : MonoBehaviour
             {
                 StartCoroutine(wasf(pos, dir));
             }
+        }
+        else
+        {
+            moverse = false;
+            anims.SetBool("idle", true);        
         }
     }
     IEnumerator wasf(Vector3 pos, int dir)

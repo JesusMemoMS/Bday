@@ -31,7 +31,6 @@ public class pMovimiento : MonoBehaviour
     }
     public void restartMovement()
     {
-        Debug.Log("posis");
         cuerpo.constraints = RigidbodyConstraints2D.None;
         cuerpo.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
