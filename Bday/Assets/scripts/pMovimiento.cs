@@ -10,8 +10,8 @@ public class pMovimiento : MonoBehaviour
     public float movSpeed;
     private Vector2 moviteto;
     private Rigidbody2D cuerpo;
-    private bool up1, up2, up3, up4;
-    private int direccion;
+    private bool up1, up2, up3, up4, collision;
+    private Vector3 posicionAnterior;
     public bool testing;
     public Animator anim;
     public UnityEvent<Vector3, int> onChange;
@@ -29,28 +29,42 @@ public class pMovimiento : MonoBehaviour
                 0
             );
     }
+    public void restartMovement()
+    {
+        Debug.Log("posis");
+        cuerpo.constraints = RigidbodyConstraints2D.None;
+        cuerpo.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+    public void stopp()
+    {
+        cuerpo.constraints = RigidbodyConstraints2D.FreezePosition;
+        moviteto = Vector2.zero;
+        anim.SetBool("idle", true);
+        up1 = false;
+        up2 = false;
+        up3 = false;
+        up4 = false;
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        collision = true;
+    }
+    void OnCollisionExit2D(Collision2D other)
+    {
+        collision = false;
+    }
     void FixedUpdate()
     {
-        if (moviteto.x != 0 && moviteto.y != 0)
+        if (moviteto.x != 0 && moviteto.y != 0 && !collision)
             cuerpo.velocity = Time.deltaTime * moviteto / 1.41f;
         else
             cuerpo.velocity = Time.deltaTime * moviteto;
-    }
-    void Update()
-    {
-        if (moviteto.x == 0 && moviteto.y == 0)
+        if (Vector3.Distance(transform.position, posicionAnterior) < 0.01)
         {
-            onChange.Invoke(new Vector3(0, 0, 0), direccion);
+            onChange.Invoke(Vector3.zero, 0);
         }
-    }
-    //raaaaaaaaaaaaaaaaaaaaaaaa
-    IEnumerator wow()
-    {
-        while (true)
-        {
-            Debug.Log(PlayerPrefs.GetInt("progreso"));
-            yield return new WaitForSeconds(1);
-        }
+        else
+            posicionAnterior = transform.position;
     }
     public void arriba()
     {
@@ -58,15 +72,15 @@ public class pMovimiento : MonoBehaviour
         {
             moviteto.y = 0;
             up1 = false;
-            anim.Play("atrasNormal");
+            anim.SetBool("idle", true);            
         }
         else
         {
-            direccion = 1;
-            onChange.Invoke(transform.position, direccion);
             moviteto.y = movSpeed;
             up1 = true;
+            anim.SetBool("idle", false);
             anim.Play("atrasCaminando");
+            onChange.Invoke(transform.position, 1);
         }
     }
     public void abajo()
@@ -75,16 +89,16 @@ public class pMovimiento : MonoBehaviour
         {
             moviteto.y = 0;
             up2 = false;
-            anim.Play("frenteNormal");
+            anim.SetBool("idle", true);
 
         }
         else
         {
-            direccion = 2;
-            onChange.Invoke(transform.position, direccion);
             moviteto.y = -movSpeed;
             up2 = true;
+            anim.SetBool("idle", false);
             anim.Play("frenteCaminando");
+            onChange.Invoke(transform.position, 2);
         }
     }
     public void izquierda()
@@ -93,15 +107,15 @@ public class pMovimiento : MonoBehaviour
         {
             moviteto.x = 0;
             up3 = false;
-            anim.Play("izquierdaNormal");
+            anim.SetBool("idle", true);
         }
         else
         {
-            direccion = 3;
-            onChange.Invoke(transform.position, direccion);
             moviteto.x = -movSpeed;
             up3 = true;
+            anim.SetBool("idle", false);
             anim.Play("izquierdaCaminando");
+            onChange.Invoke(transform.position, 3);
         }
     }
     public void derecha()
@@ -110,15 +124,15 @@ public class pMovimiento : MonoBehaviour
         {
             moviteto.x = 0;
             up4 = false;
-            anim.Play("derechaNormal");
+            anim.SetBool("idle", true);
         }
         else
         {
-            direccion = 4;
-            onChange.Invoke(transform.position, direccion);
             moviteto.x = movSpeed;
             up4 = true;
+            anim.SetBool("idle", false);
             anim.Play("derechaCaminando");
+            onChange.Invoke(transform.position, 4);
         }
     }
 }

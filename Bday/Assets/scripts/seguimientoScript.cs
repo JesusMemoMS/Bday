@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Search;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class seguimientoScript : MonoBehaviour
 {
     public GameObject jugador;
+    public Vector3 posAnterior;
+    public UnityEvent playerEvent;
+    public bool activo;
     private Queue<Vector3> posiciones;
     private Queue<int> direccion;
     private Animator anims;
@@ -21,18 +23,27 @@ public class seguimientoScript : MonoBehaviour
     }
     public void EventoPlayer(Vector3 pos, int dir)
     {
-        if (pos == new Vector3(0, 0, 0))
+        if (activo)
         {
-            moverse = false;
-            anims.SetBool("idle", true);
+            if (pos == Vector3.zero)
+            {
+                Debug.Log("ay");
+                moverse = false;
+                anims.SetBool("idle", true);
+            }
+            else
+            {
+                StartCoroutine(wasf(pos, dir));
+            }
         }
-        else
-        {
-            moverse = true;
-            anims.SetBool("idle", false);
-            direccion.Enqueue(dir);
-            posiciones.Enqueue(pos);
-        }
+    }
+    IEnumerator wasf(Vector3 pos, int dir)
+    {
+        yield return new WaitUntil(() => posAnterior != jugador.transform.position);
+        moverse = true;
+        anims.SetBool("idle", false);
+        direccion.Enqueue(dir);
+        posiciones.Enqueue(pos);
     }
     void FixedUpdate()
     {
@@ -65,5 +76,6 @@ public class seguimientoScript : MonoBehaviour
                 .movSpeed / 50 * Time.deltaTime
             );
         }
+        posAnterior = jugador.transform.position;
     }
 }

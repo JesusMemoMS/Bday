@@ -9,9 +9,10 @@ public class interaccionHandler : MonoBehaviour
 {
     public GameObject cajaInteract;
     public GameObject CartelGuardado;
+    public AudioSource musicaManager;
     public Text textoInteract;
     public GameObject jugador;
-    public AudioSource cancionCuarto;
+    [NonSerialized] public AudioClip musicaCuarto;
     [NonSerialized] public Dialogo dialogo;
     [NonSerialized] public string cuartoNom;
     [NonSerialized] public Vector3 telePos;
@@ -20,6 +21,7 @@ public class interaccionHandler : MonoBehaviour
     [NonSerialized] public Sprite[] caras;
     public void IHscript()
     {
+        
         if (pregunta == null)
         // dialogo
         {
@@ -34,16 +36,17 @@ public class interaccionHandler : MonoBehaviour
     }
     public void interaccionConfirm()
     {
+        if (musicaCuarto)
+        {
+            musicaManager.clip = musicaCuarto;
+            musicaManager.Play();
+        }
         PlayerPrefs.SetFloat("posX", jugador.transform.position.x);
         PlayerPrefs.SetFloat("posY", jugador.transform.position.y);
         Debug.Log(PlayerPrefs.GetFloat("posX"));
         PlayerPrefs.Save();
         jugador.GetComponent<pMovimiento>().ultimoCuarto = cuartoNom;
         jugador.transform.position = telePos;
-        if (cancionCuarto != null)
-        {
-            cancionCuarto.Play();
-        }
         jugador.GetComponent<Animator>().Play(posFinal);
         CartelGuardado.GetComponent<Animator>().Play("defadeCartel");
     }

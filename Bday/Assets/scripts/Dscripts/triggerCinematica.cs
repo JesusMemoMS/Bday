@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class triggerCinematica : MonoBehaviour
 {
+    public GameObject jugador;
     public Dialogo dialogo;
     [SerializeField] public Sprite[] carasDialogo;
     public SpriteRenderer cuartoCentro;
@@ -17,6 +18,7 @@ public class triggerCinematica : MonoBehaviour
         camara.GetComponent<camaraWork>().bloqueado = true;
         camara.transform.position = new Vector3(cuartoCentro.bounds.center.x, cuartoCentro.bounds.center.y, -10);
         uiGameplay.SetActive(false);
+        jugador.GetComponent<pMovimiento>().stopp();
 
         StartCoroutine(Cinematica());
     }

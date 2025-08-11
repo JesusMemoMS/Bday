@@ -9,6 +9,7 @@ public class teleTrigger : MonoBehaviour
     public string posFinal;
     public string cuartoSalida;
     public Vector3 posicionTeleport;
+    public AudioClip musica;
     private interaccionHandler InHandler;
 
     void Start()
@@ -17,13 +18,12 @@ public class teleTrigger : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        TryGetComponent<AudioSource>(out AudioSource cuatroSound);
         boton.SetActive(true);
         InHandler.pregunta = pregunta;
         InHandler.telePos = posicionTeleport;
         InHandler.posFinal = posFinal;
         InHandler.cuartoNom = cuartoSalida;
-        InHandler.cancionCuarto = cuatroSound;
+        InHandler.musicaCuarto = musica;
     }
 
     private void OnTriggerExit2D(Collider2D other)

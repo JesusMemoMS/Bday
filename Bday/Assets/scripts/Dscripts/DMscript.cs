@@ -18,6 +18,7 @@ public class DMscript : MonoBehaviour
     public Text textoNarracion;
     public Text nombreDialogo;
     public UnityEvent endDialogo;
+    public UnityEvent endPlayer;
     public Camera camarilla;
     private AudioSource eee;
     private bool dialogoBool;
@@ -119,6 +120,7 @@ public class DMscript : MonoBehaviour
             endDialogo.Invoke();
             return;
         }
+        endPlayer.Invoke();
         FindObjectOfType<camaraWork>().bloqueado = false;
         uiGameplay.SetActive(true);
     }
