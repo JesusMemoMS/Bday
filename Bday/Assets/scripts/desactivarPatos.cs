@@ -17,6 +17,5 @@ public class desactivarPatos : MonoBehaviour
             else
                 pato.activo = false;
         }
-        Destroy(this);
     }
 }
