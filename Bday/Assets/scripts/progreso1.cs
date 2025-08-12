@@ -11,6 +11,8 @@ public class progreso1 : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         progreso = PlayerPrefs.GetInt("progreso");
+        Debug.Log(progreso);
+        Debug.Log(player.GetComponent<pMovimiento>().ultimoCuarto);
         if (progreso == 0 && player.GetComponent<pMovimiento>().ultimoCuarto == "cuarto3")
         {
             PlayerPrefs.SetInt("progreso", PlayerPrefs.GetInt("progreso") + 1);
