@@ -7388,6 +7388,7 @@ Transform:
   m_LocalScale: {x: 1.0130254, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2004468479}
   - {fileID: 552825170}
   - {fileID: 1847067377}
   m_Father: {fileID: 0}
@@ -10636,7 +10637,7 @@ MonoBehaviour:
   prog1:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1976018757}
+      - m_Target: {fileID: 1376000617}
         m_TargetAssemblyTypeName: saveCambio, Assembly-CSharp
         m_MethodName: makeChange
         m_Mode: 1
@@ -10648,7 +10649,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1976018757}
+      - m_Target: {fileID: 1487334294}
         m_TargetAssemblyTypeName: saveCambio, Assembly-CSharp
         m_MethodName: makeChange
         m_Mode: 1
@@ -11782,12 +11783,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004468476}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.105904, y: 2.8918417, z: 0.033062045}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.567831, y: 0.4518416, z: 0.033062045}
+  m_LocalScale: {x: 0.987142, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1138563917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067427107
 GameObject:
@@ -12108,4 +12109,3 @@ SceneRoots:
   - {fileID: 1785860310}
   - {fileID: 437871826}
   - {fileID: 1111034636}
-  - {fileID: 2004468479}
