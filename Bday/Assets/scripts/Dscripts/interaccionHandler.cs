@@ -35,13 +35,14 @@ public class interaccionHandler : MonoBehaviour
         else
         // interaccion
         {
+            jugaFunc.stopp();
             cajaInteract.SetActive(true);
             textoInteract.text = pregunta;
         }
     }
     public void interaccionConfirm()
     {
-        jugaFunc.stopp();
+        jugaFunc.restartMovement();
         if (musicaCuarto)
         {
             musicaManager.clip = musicaCuarto;
