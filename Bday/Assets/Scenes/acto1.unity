@@ -10159,7 +10159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cajaInteract: {fileID: 1926266179}
   CartelGuardado: {fileID: 891466384}
-  musicaManager: {fileID: 0}
+  musicaManager: {fileID: 668717536}
   textoInteract: {fileID: 1127188559}
   jugador: {fileID: 704107907}
 --- !u!1 &1785143177
