@@ -3525,8 +3525,8 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.053966522, y: 0.10998881}
   m_SpriteTilingProperty:
@@ -4277,7 +4277,7 @@ Transform:
   m_GameObject: {fileID: 704107907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.99, y: 1.18, z: -0}
+  m_LocalPosition: {x: 0.001, y: -0.222, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8870,14 +8870,14 @@ MonoBehaviour:
     - ...
     - "\xA1Los wafles son geniales!"
     nombres:
-    - Toby
-    - Toby
-    - Toby
-    - Toby
+    - Ticci Toby
+    - Ticci Toby
+    - Ticci Toby
+    - Ticci Toby
     - Hoodie
     - Hoodie
-    - Toby
-    - Toby
+    - Ticci Toby
+    - Ticci Toby
     arriba: 0
   boton: {fileID: 1690769854}
   carasDialogo:
@@ -10464,7 +10464,7 @@ MonoBehaviour:
     - Hoodie
     - Hoodie
     - Hoodie
-    - Toby
+    - Ticci Toby
     - Hoodie
     - Masky
     - Hoodie
@@ -12574,26 +12574,26 @@ MonoBehaviour:
     - "salt\xF3 por la ventana as\xED que dudo que est\xE9 muy lejos\r"
     - "Todav\xEDa podemos salir a buscar-"
     nombres:
-    - Toby
-    - Toby
+    - Ticci Toby
+    - Ticci Toby
     - Masky
     - Masky
-    - Toby
-    - Toby
-    - Toby
+    - Ticci Toby
+    - Ticci Toby
+    - Ticci Toby
     - Hoodie
     - Hoodie
     - Hoodie
     - Hoodie
-    - Toby
-    - Toby
-    - Toby
-    - Toby
-    - Toby
-    - Toby
+    - Ticci Toby
+    - Ticci Toby
+    - Ticci Toby
+    - Ticci Toby
+    - Ticci Toby
+    - Ticci Toby
     - Masky
     - Masky
-    - Toby
+    - Ticci Toby
     - Hoodie
     - Hoodie
     - Hoodie
@@ -12648,7 +12648,7 @@ MonoBehaviour:
     nombres:
     - Masky
     - Hoodie
-    - Toby
+    - Ticci Toby
     - Hoodie
     arriba: 0
   carasDialogo:
@@ -12975,9 +12975,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patos:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1531500341}
+  - {fileID: 1132459260}
+  - {fileID: 1811478295}
   activar: 0
 --- !u!1 &2067427107
 GameObject:
