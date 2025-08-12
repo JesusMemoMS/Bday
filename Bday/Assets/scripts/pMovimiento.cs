@@ -36,7 +36,7 @@ public class pMovimiento : MonoBehaviour
     }
     public void stopp()
     {
-        cuerpo.constraints = RigidbodyConstraints2D.FreezePosition;
+        cuerpo.constraints = RigidbodyConstraints2D.FreezeAll;
         moviteto = Vector2.zero;
         anim.SetBool("idle", true);
         up1 = false;

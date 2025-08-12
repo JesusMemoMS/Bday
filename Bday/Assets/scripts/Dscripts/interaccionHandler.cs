@@ -25,6 +25,7 @@ public class interaccionHandler : MonoBehaviour
         if (pregunta == null)
         // dialogo
         {
+            jugador.GetComponent<pMovimiento>().stopp();
             FindObjectOfType<DMscript>().empiezaCaja(dialogo, caras, false);
         }
         else

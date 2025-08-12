@@ -1,14 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Events;
 using UnityEngine;
 
 public class seguimientoScript : MonoBehaviour
 {
     public GameObject jugador;
     public Vector3 posAnterior;
-    public UnityEvent playerEvent;
     public bool activo;
     private Queue<Vector3> posiciones;
     private Queue<int> direccion;
