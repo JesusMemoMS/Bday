@@ -12,6 +12,7 @@ public class interaccionHandler : MonoBehaviour
     public AudioSource musicaManager;
     public Text textoInteract;
     public GameObject jugador;
+    private pMovimiento jugaFunc;
     [NonSerialized] public AudioClip musicaCuarto;
     [NonSerialized] public Dialogo dialogo;
     [NonSerialized] public string cuartoNom;
@@ -19,13 +20,16 @@ public class interaccionHandler : MonoBehaviour
     [NonSerialized] public string pregunta;
     [NonSerialized] public string posFinal;
     [NonSerialized] public Sprite[] caras;
+    void Start()
+    {
+        jugaFunc = jugador.GetComponent<pMovimiento>();
+    }
     public void IHscript()
     {
-        
         if (pregunta == null)
         // dialogo
         {
-            jugador.GetComponent<pMovimiento>().stopp();
+            jugaFunc.stopp();
             FindObjectOfType<DMscript>().empiezaCaja(dialogo, caras, false);
         }
         else
@@ -37,6 +41,7 @@ public class interaccionHandler : MonoBehaviour
     }
     public void interaccionConfirm()
     {
+        jugaFunc.stopp();
         if (musicaCuarto)
         {
             musicaManager.clip = musicaCuarto;
@@ -46,7 +51,7 @@ public class interaccionHandler : MonoBehaviour
         PlayerPrefs.SetFloat("posY", jugador.transform.position.y);
         Debug.Log(PlayerPrefs.GetFloat("posX"));
         PlayerPrefs.Save();
-        jugador.GetComponent<pMovimiento>().ultimoCuarto = cuartoNom;
+        jugaFunc.ultimoCuarto = cuartoNom;
         jugador.transform.position = telePos;
         jugador.GetComponent<Animator>().Play(posFinal);
         CartelGuardado.GetComponent<Animator>().Play("defadeCartel");
