@@ -48,8 +48,8 @@ public class interaccionHandler : MonoBehaviour
             musicaManager.clip = musicaCuarto;
             musicaManager.Play();
         }
-        PlayerPrefs.SetFloat("posX", jugador.transform.position.x);
-        PlayerPrefs.SetFloat("posY", jugador.transform.position.y);
+        PlayerPrefs.SetFloat("posX", telePos.x);
+        PlayerPrefs.SetFloat("posY", telePos.y);
         Debug.Log(PlayerPrefs.GetFloat("posX"));
         PlayerPrefs.Save();
         jugaFunc.ultimoCuarto = cuartoNom;

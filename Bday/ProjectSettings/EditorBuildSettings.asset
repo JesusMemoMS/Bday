@@ -18,12 +18,12 @@ EditorBuildSettings:
     path: Assets/FPS/Scenes/MainScene.unity
     guid: d794a2ef8ba31d847ad3c19d03e2ddb9
   - enabled: 1
+    path: Assets/Scenes/portada.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
     path: Assets/Scenes/acto1.unity
     guid: d3cc97ac440daf1468293e1441ecfc28
   - enabled: 1
     path: Assets/Scenes/acto2.unity
     guid: 0653fcf435cd4a542a22fb8ddade6e98
-  - enabled: 1
-    path: Assets/Scenes/portada.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
