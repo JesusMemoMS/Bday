@@ -12,6 +12,7 @@ public class interaccionHandler : MonoBehaviour
     public AudioSource musicaManager;
     public Text textoInteract;
     public GameObject jugador;
+    public GameObject minijuegoBen;
     private pMovimiento jugaFunc;
     [NonSerialized] public AudioClip musicaCuarto;
     [NonSerialized] public Dialogo dialogo;
@@ -20,13 +21,20 @@ public class interaccionHandler : MonoBehaviour
     [NonSerialized] public string pregunta;
     [NonSerialized] public string posFinal;
     [NonSerialized] public Sprite[] caras;
+    [NonSerialized] public bool minijuego;
     void Start()
     {
         jugaFunc = jugador.GetComponent<pMovimiento>();
     }
     public void IHscript()
     {
-        if (pregunta == null)
+        if (minijuego)
+        {
+            jugaFunc.stopp();
+            minijuegoBen.SetActive(true);
+            jugaFunc.restartMovement();
+        }
+        else if (pregunta == null)
         // dialogo
         {
             jugaFunc.stopp();
