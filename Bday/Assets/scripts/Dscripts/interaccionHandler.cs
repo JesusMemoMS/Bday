@@ -58,7 +58,6 @@ public class interaccionHandler : MonoBehaviour
         }
         PlayerPrefs.SetFloat("posX", telePos.x);
         PlayerPrefs.SetFloat("posY", telePos.y);
-        Debug.Log(PlayerPrefs.GetFloat("posX"));
         PlayerPrefs.Save();
         jugaFunc.ultimoCuarto = cuartoNom;
         jugador.transform.position = telePos;
