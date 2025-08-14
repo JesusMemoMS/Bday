@@ -36,7 +36,7 @@ public class benGame : MonoBehaviour
                     oscuridad.SetInteger("puntos", puntos);
                     cantidadRestante = cantidadEstandar;
                     velocidad += 80;
-                    if (puntos == 5)
+                    if (puntos == 4)
                     {
                         benVencido.Invoke();
                     }
