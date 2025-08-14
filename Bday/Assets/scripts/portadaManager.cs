@@ -34,24 +34,25 @@ public class portadaManager : MonoBehaviour
     public void NuevaPartida()
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("escena", 1);
         portada.SetActive(false);
         sonidoRaro = GetComponent<AudioSource>();
         sonidoRaro.Play();
-        StartCoroutine(Esperador(musica));
+        StartCoroutine(Esperador(musica, 1));
     }
     public void ContinuarPartida()
     {
         portada.SetActive(false);
         sonidoRaro = GetComponent<AudioSource>();
         sonidoRaro.Play();
-        StartCoroutine(Esperador(musica));
-    }
-    public IEnumerator Esperador(AudioSource musica)
+        StartCoroutine(Esperador(musica, PlayerPrefs.GetInt("escena")));
+    }       
+    public IEnumerator Esperador(AudioSource musica, int index)
     {
         yield return new WaitForSeconds(3);
         musica.Stop();
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("acto1");
+        SceneManager.LoadScene(index);
     }
     public void SalirJuego()
     {

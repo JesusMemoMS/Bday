@@ -23,6 +23,7 @@ public class benSeguimiento : MonoBehaviour
     }
     void muerte()
     {
+        PlayerPrefs.SetInt("redo", 1);
         SceneManager.LoadScene("acto2");
     }
     void Update()

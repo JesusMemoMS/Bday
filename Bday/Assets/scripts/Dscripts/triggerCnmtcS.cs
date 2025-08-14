@@ -5,6 +5,7 @@ using UnityEngine;
 public class triggerCinematicaSlenderman : MonoBehaviour
 {
     public Dialogo dialogo;
+    public GameObject jugador;
     [SerializeField] public Sprite[] carasDialogo;
     public SpriteRenderer cuartoCentro;
     public Camera camara;
@@ -20,6 +21,7 @@ public class triggerCinematicaSlenderman : MonoBehaviour
         camara.GetComponent<camaraWork>().bloqueado = true;
         camara.transform.position = new Vector3(cuartoCentro.bounds.center.x, cuartoCentro.bounds.center.y, -10);
         uiGameplay.SetActive(false);
+        jugador.GetComponent<pMovimiento>().stopp();
 
         StartCoroutine(Cinematica());
     }
@@ -30,13 +32,6 @@ public class triggerCinematicaSlenderman : MonoBehaviour
             kitchenwareNcandybars = false;
             StartCoroutine(DoesItCall());
 
-        }
-    }
-    IEnumerator Pablo()
-    {
-        while (true)
-        {
-            
         }
     }
     IEnumerator DoesItCall()
