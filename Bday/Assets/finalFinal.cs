@@ -1,0 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class finalFinal : MonoBehaviour
+{
+    public GameObject jugador;
+    public Dialogo dialogo;
+    [SerializeField] public Sprite[] carasDialogo;
+    public SpriteRenderer cuartoCentro;
+    public Camera camara;
+    public GameObject uiGameplay;
+    public GameObject esto;
+    private bool kitchenwareNcandybars;
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        camara.GetComponent<camaraWork>().bloqueado = true;
+        camara.transform.position = new Vector3(cuartoCentro.bounds.center.x, cuartoCentro.bounds.center.y, -10);
+        uiGameplay.SetActive(false);
+        jugador.GetComponent<pMovimiento>().stopp();
+
+        StartCoroutine(Cinematica());
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Destroy(esto);
+    }
+    IEnumerator Cinematica()
+    {
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<DMscript>().empiezaCaja(dialogo, carasDialogo, false);
+    }
+}

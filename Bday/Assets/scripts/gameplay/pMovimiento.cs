@@ -20,6 +20,7 @@ public class pMovimiento : MonoBehaviour
     public GameObject[] salidas;
     public GameObject[] generadores;
     [NonSerialized] public string ultimoCuarto;
+    [NonSerialized] public int cantRecuerdos;
     void Start()
     {
         moviteto = new Vector2(0, 0);

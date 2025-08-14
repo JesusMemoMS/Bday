@@ -12,7 +12,8 @@ public class camaraAgrandar : MonoBehaviour
     void OnTriggerStay2D(Collider2D other)
     {
         camara.orthographicSize = .5f * multiplicadorCamara;
-        camara.GetComponent<camaraWork>().offsetY += offset;
+        if (offset != 0)
+            camara.GetComponent<camaraWork>().offsetY = offset;
         Destroy(this);
     }
 }
