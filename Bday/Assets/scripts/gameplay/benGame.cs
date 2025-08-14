@@ -8,8 +8,10 @@ using UnityEngine.Events;
 public class benGame : MonoBehaviour
 {
     private float velocidad = 120;
-    private int puntos = 0, cantidadRestante = 4;
+    private int puntos = 0, cantidadRestante = 3;
+    private int cantidadEstandar = 3;
     private Vector3 centro;
+    public Animator oscuridad;
     public GameObject jugadorManecilla;
     public GameObject circulo;
     public GameObject areaManecilla;
@@ -29,8 +31,10 @@ public class benGame : MonoBehaviour
                 cantidadRestante -= 1;
                 if (cantidadRestante == 0)
                 {
+                    cantidadEstandar++;
                     puntos++;
-                    cantidadRestante = 4;
+                    oscuridad.SetInteger("puntos", puntos);
+                    cantidadRestante = cantidadEstandar;
                     velocidad += 80;
                     if (puntos == 5)
                     {

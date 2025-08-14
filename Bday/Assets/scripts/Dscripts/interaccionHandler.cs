@@ -56,12 +56,15 @@ public class interaccionHandler : MonoBehaviour
             musicaManager.clip = musicaCuarto;
             musicaManager.Play();
         }
-        PlayerPrefs.SetFloat("posX", telePos.x);
-        PlayerPrefs.SetFloat("posY", telePos.y);
-        PlayerPrefs.Save();
+        if (!int.TryParse(cuartoNom, out int numero))
+        {
+            PlayerPrefs.SetFloat("posX", telePos.x);
+            PlayerPrefs.SetFloat("posY", telePos.y);
+            PlayerPrefs.Save();
+            CartelGuardado.GetComponent<Animator>().Play("defadeCartel");
+        }
         jugaFunc.ultimoCuarto = cuartoNom;
         jugador.transform.position = telePos;
         jugador.GetComponent<Animator>().Play(posFinal);
-        CartelGuardado.GetComponent<Animator>().Play("defadeCartel");
     }
 }
