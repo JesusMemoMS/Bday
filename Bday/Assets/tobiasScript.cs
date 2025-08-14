@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class tobiasScript : MonoBehaviour
 {
     private Image imagen;
+    public GameObject esto;
     void Start()
     {
         imagen = GetComponent<Image>();
@@ -19,7 +20,7 @@ public class tobiasScript : MonoBehaviour
     }
     public void destroyy()
     {
-        Destroy(this);
+        Destroy(esto);
     }
     IEnumerator coldown()
     {
