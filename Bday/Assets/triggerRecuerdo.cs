@@ -8,6 +8,7 @@ public class triggerRecuerdo : MonoBehaviour
 {
     public pMovimiento jugador;
     public Dialogo dialogo;
+    public GameObject sally;
     [SerializeField] public Sprite[] carasDialogo;
     public SpriteRenderer cuartoCentro;
     public Camera camara;
@@ -17,7 +18,6 @@ public class triggerRecuerdo : MonoBehaviour
     public GameObject oscuro;
     public findJugador jeff;
     private bool kitchenwareNcandybars;
-
     void OnTriggerEnter2D(Collider2D other)
     {
         kitchenwareNcandybars = true;
@@ -40,6 +40,7 @@ public class triggerRecuerdo : MonoBehaviour
             if (jugador.cantRecuerdos == 5)
             {
                 objetivoTexto.text = "Encuentra a Sally";
+                sally.SetActive(true);
             }
             oscuro.SetActive(false);
             jeff.moverse = true;

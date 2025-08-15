@@ -14,5 +14,6 @@ public class escenaGuardado : MonoBehaviour
         PlayerPrefs.SetFloat("posY", jugador.position.y);
         PlayerPrefs.Save();
         cartelGuardado.Play("defadeCartel");
+        Destroy(this);
     }
 }

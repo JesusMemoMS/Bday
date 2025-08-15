@@ -642,6 +642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camara: {fileID: 669498474}
   multiplicadorCamara: 2
+  offset: 0
 --- !u!114 &67178664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,6 +657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camara: {fileID: 669498474}
   multiplicadorCamara: 1.5
+  offset: 0
 --- !u!61 &67178665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3925,6 +3927,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  entradas: []
+  salidas: []
+  generadores: []
 --- !u!50 &704107912
 Rigidbody2D:
   serializedVersion: 4
@@ -4449,6 +4454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camara: {fileID: 669498474}
   multiplicadorCamara: 2
+  offset: 0
 --- !u!61 &802326740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10017,6 +10023,7 @@ MonoBehaviour:
   musicaManager: {fileID: 668717536}
   textoInteract: {fileID: 1127188559}
   jugador: {fileID: 704107907}
+  minijuegoBen: {fileID: 0}
 --- !u!1 &1785143177
 GameObject:
   m_ObjectHideFlags: 0
@@ -11538,6 +11545,7 @@ MonoBehaviour:
     - Hoodie
     - Hoodie
     arriba: 0
+  jugador: {fileID: 704107907}
   carasDialogo:
   - {fileID: 21300000, guid: 3de1dc70e92aa454ba512794ff2707e3, type: 3}
   - {fileID: 21300000, guid: 6fe8845a16397544f875d6a724bb73ad, type: 3}
@@ -11591,6 +11599,8 @@ MonoBehaviour:
     - Ticci Toby
     - Hoodie
     arriba: 0
+  musicamanager: {fileID: 0}
+  sonido: {fileID: 0}
   carasDialogo:
   - {fileID: 21300000, guid: 8fd915c264adb934c8660909dc528ed0, type: 3}
   - {fileID: 21300000, guid: 8f939d19d13785c4594cd634626c9310, type: 3}
@@ -11600,6 +11610,9 @@ MonoBehaviour:
   camara: {fileID: 669498474}
   uiGameplay: {fileID: 1892222291}
   esto: {fileID: 1976018751}
+  bossPlay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1976018757
 MonoBehaviour:
   m_ObjectHideFlags: 0

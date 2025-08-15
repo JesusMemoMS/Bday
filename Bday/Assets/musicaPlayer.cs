@@ -10,7 +10,8 @@ public class musicaPlayer : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        jugador.transform.position = new Vector3(-6.765f, -0.767f, 0);
+        if (jugador)
+            jugador.transform.position = new Vector3(-6.765f, -0.767f, 0);
     }
     public void ponerMusica()
     {

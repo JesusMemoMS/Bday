@@ -7,8 +7,8 @@ using System;
 
 public class findJugador : MonoBehaviour
 {
-    [SerializeField] Transform jugador;
-    NavMeshAgent jeff;
+    public Transform jugador;
+    public NavMeshAgent jeff;
     public SpriteRenderer jeffSprite;
     public Animator jeffAnim;
     private Vector3 posicionAnt;
@@ -20,8 +20,7 @@ public class findJugador : MonoBehaviour
         jeff.updateUpAxis = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (moverse)
         {
@@ -29,11 +28,11 @@ public class findJugador : MonoBehaviour
                 jeffAnim.Play("idle");
             else
                 jeffAnim.Play("corriendo");
-            if (transform.position.x - jugador.position.x < 0 && jeffSprite.flipX == false)
+            if (transform.position.x - jugador.position.x > 0 && jeffSprite.flipX == false)
             {
                 jeffSprite.flipX = true;
             }
-            else if (transform.position.x - jugador.position.x > 0 && jeffSprite.flipX == true)
+            else if (transform.position.x - jugador.position.x < 0 && jeffSprite.flipX == true)
             {
                 jeffSprite.flipX = false;
             }
